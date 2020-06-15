@@ -1,10 +1,10 @@
 {
 	"version" : 1,
 	"login": {
-		"use_native": true
+		"use_native": false
 	},
 	"verification": {
-		"use_native": true,
+		"use_native": false,
 		"endpoint": "https://utils.caliente.mx/verify/veridocid/"
 	}
 }
