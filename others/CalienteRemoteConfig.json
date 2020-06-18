@@ -6,5 +6,8 @@
 	"verification": {
 		"use_native": false,
 		"endpoint": "https://utils.caliente.mx/verify/veridocid/"
+	},
+	"tracking": {
+		"endpoint": "https://fdoreynoso.dev/others/new_tracking_test.json"
 	}
 }
