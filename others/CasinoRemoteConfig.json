@@ -1,0 +1,1563 @@
+{
+    "version": 1,
+	"app_global": {
+		"urls": {
+			"deposit": "&redirectTemplate=native_app_deposit",
+			"promotions": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Fpromociones%3FhideHeader%3D1%26hideFooter%3D1",
+            "host": "oapi.winner.com",
+            "pas_url": "https://login.winner.com",
+            "verification": "https://pinnacle.winner.mx/verify/veridocid/",
+            "help": "https://www.winner.mx/faq?hideHeader=1&hideFooter=1",
+            "su_bonus_terms_of_use": "https://www.winner.mx/promociones/bono-nuevos-usuarios?hideHeader=1&hideFooter=1"
+		},
+		"sign_up_bonus": "700",
+		"logged_in_base_url": "https://pinnacle.winner.mx/apps-services/login-and-redirect/?token=%5Btoken%5D"
+	},
+	"settings_menu": [{
+			"title": "Mis Promociones",
+			"url_logged_out": "https://www.winner.mx/promociones?hideHeader=1&hideFooter=1",
+			"url_logged_in": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Fpromociones%3FhideHeader%3D1%26hideFooter%3D1",
+			"blocked_on_logged_out": false
+		},
+		{
+			"title": "Banco",
+			"children": [{
+					"title": "Depósito",
+					"url_logged_in": "&redirectTemplate=native_app_deposit",
+					"blocked_on_logged_out": true
+				},
+				{
+					"title": "Retiro",
+					"url_logged_in": "&redirectTemplate=native_app_withdraw",
+					"blocked_on_logged_out": true
+				},
+				{
+					"title": "Retiros Pendientes",
+					"url_logged_in": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Fpending-withdraw%3FhideHeader%3D1%26hideFooter%3D1",
+					"blocked_on_logged_out": true
+				},
+				{
+					"title": "Transacciones",
+					"url_logged_in": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Ftransaction-history%3FhideHeader%3D1%26hideFooter%3D1",
+					"blocked_on_logged_out": true
+				}
+			]
+		},
+		{
+			"title": "Mi cuenta",
+			"children": [{
+					"title": "Verifica tu Cuenta",
+                    "method": "verification",
+					"blocked_on_logged_out": true,
+                    "metadata": {
+                        "url": "https://pinnacle.winner.mx/verify/veridocid/"
+                    }
+				},
+				{
+					"title": "Puntos de Lealtad",
+					"url_logged_in": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Floyalty-points%3Fplatform%3Dmobile%26hideHeader%3D1%26hideFooter%3D1",
+					"blocked_on_logged_out": true
+				},
+				{
+					"title": "Comparte con un Amigo",
+					"blocked_on_logged_out": false,
+                    "method": "share",
+                    "metadata": {
+                        "action_type": "none",
+                        "url": "https://winnermx-native.onelink.me/mLhs/aba54358"
+                    }
+				},
+				{
+					"title": "Mostrar Balance",
+					"metadata": {
+						"action_type": "switch",
+						"user_defaults_key": "com.casino.native-casino.showBalace"
+					},
+					"blocked_on_logged_out": true
+				},
+				{
+					"title": "Cambiar Contraseña",
+					"url_logged_in": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Fchange-password%3FhideHeader%3D1%26hideFooter%3D1",
+					"blocked_on_logged_out": true
+				}
+			]
+		},
+		{
+			"title": "Centro de Mensajes",
+			"method": "showInbox",
+			"blocked_on_logged_out": false
+		},
+		{
+			"title": "Ajustes",
+			"children": [{
+					"title": "Iniciar Juegos con Sonido",
+					"metadata": {
+						"action_type": "switch",
+						"user_defaults_key": "com.casino.native-casino.soundOn"
+					},
+					"blocked_on_logged_out": false
+				},
+				{
+					"title": "Eliminar Juegos Descargados",
+					"metadata": {
+						"action_type": "none"
+					},
+					"method": "removeAllGames",
+					"blocked_on_logged_out": false
+				}
+			]
+		},
+		{
+			"title": "Ayuda y Soporte",
+			"children": [{
+					"title": "Primeros Pasos",
+					"url": "https://www.winner.mx/sobre-nosotros?hideHeader=1&hideFooter=1",
+					"blocked_on_logged_out": false
+				},
+				{
+					"title": "Soporte 24/7",
+					"url": "https://www.winner.mx/faq?hideHeader=1&hideFooter=1",
+					"blocked_on_logged_out": false
+				},
+				{
+					"title": "Juego Responsable",
+					"url": "https://www.winner.mx/casino/responsible-gaming?hideHeader=1&hideFooter=1",
+					"blocked_on_logged_out": false
+				},
+				{
+					"title": "Términos y Condiciones",
+					"url": "https://www.winner.mx/terms-and-conditions?hideHeader=1&hideFooter=1",
+					"blocked_on_logged_out": false
+				}
+			]
+		}
+	],
+	"layout": {
+		"featured": [{
+                "id": "aogs-promo1",
+				"assets": {
+					"banner": "https://static.winner.mx/apps/shared/native/casino/app/assets/banners/hpb_aog.jpg",
+                    "ipad": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/banners/hpb_aogs-ipad.jpg"
+				},
+				"title": "JUEGA AHORA",
+				"tags": [
+					"Nuevos",
+					"Slots",
+					"Fantasía",
+					"Clásicos"
+				],
+				"action": {
+					"game": "aogs"
+				}
+			},
+			{
+                "id": "bfb-promo1",
+				"assets": {
+					"banner": "https://static.winner.mx/apps/shared/native/casino/app/assets/banners/hpb_bfb.jpg",
+                    "ipad": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/banners/hpb_bfb-ipad.jpg"
+				},
+				"title": "JUEGA AHORA",
+				"tags": [
+					"Nuevos",
+					"Slots",
+					"Naturaleza",
+					"Clásicos"
+				],
+				"action": {
+					"game": "bfb"
+				}
+			},
+			{
+                "id": "rol-promo1",
+				"assets": {
+					"banner": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/banners/hpb_lvrt.jpg",
+                    "ipad": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/banners/hpb_win_live-ipad.jpg"
+				},
+				"title": "JUEGA LIVE ROULETTE",
+				"tags": [
+					"En Vivo",
+					"Ruleta",
+					"Clásicos"
+				],
+				"action": {
+					"game": "rol"
+				}
+			}
+		],
+		"content": {
+			"home": [{
+					"title": "Favoritos de Winner",
+					"display_mode": 1,
+					"games": [
+						"bjto",
+						"bfb",
+						"ro_g",
+						"gpas_bwizard_pop",
+						"aeolus",
+						"bjl",
+						"whk",
+						"glrj",
+						"rol",
+						"aogs",
+						"legwld",
+						"gpas_elady_pop"
+					]
+				},
+				{
+					"title": "Juegos Nuevos",
+					"display_mode": 0,
+					"games": [
+						"gpas_aogkasgard_pop",
+						"gpas_sstrike_pop",
+						"gpas_tttotems_pop",
+						"gpas_mwilds_pop",
+						"gpas_scomic_pop",
+						"gpas_aognwot_pop",
+						"gpas_eemeralds_pop",
+						"gpas_gmacaque_pop",
+						"gpas_elady_pop",
+						"gpas_krhiddent_pop",
+						"gpas_scqueen_pop",
+						"gpas_squeen_pop",
+						"gpas_sorome_pop",
+						"gpas_appower_pop",
+						"gpas_sjungle_pop",
+						"gpas_extrfruits_pop"
+					]
+				},
+				{
+					"title": "Fire Blaze Jackpot",
+					"display_mode": 0,
+					"games": [
+						"gpas_bwizard_pop",
+						"gpas_scqueen_pop",
+						"gpas_squeen_pop",
+						"gpas_gmacaque_pop",
+						"gpas_elady_pop"
+					]
+				},
+				{
+					"title": "Juegos de Casino",
+					"display_mode": 0,
+					"games": [
+						"bjto",
+						"bjcb",
+						"bjl",
+						"rol",
+						"abbj",
+						"jb_mh",
+						"ro101",
+						"bjs",
+						"bjto_sh",
+						"huh",
+						"dbro",
+						"fcbj",
+						"fdtro",
+						"bal",
+						"chel",
+						"swl",
+						"qrol"
+					]
+				},
+				{
+                    "id": "gen-promo2020",
+					"title": "Promociones Exclusivas",
+					"display_mode": 2,
+					"action": {
+						"url_logged_out": "https://www.winner.mx/promociones?hideHeader=1&hideFooter=1",
+						"url_logged_in": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Fpromociones%3FhideHeader%3D1%26hideFooter%3D1"
+					},
+					"assets": {
+						"src": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/banners/promo_banner_winner.jpg"
+					}
+				},
+				{
+					"title": "Jackpots",
+					"display_mode": 0,
+					"games": [
+						"glrj",
+						"aeolus",
+						"aogs",
+						"furf",
+						"zeus",
+						"hrcls",
+						"aogrots",
+						"batcat",
+						"fdtsl",
+						"fdtjg",
+						"glr2",
+						"jbells",
+						"jla",
+						"grbjp",
+						"phot",
+						"supman",
+						"evj",
+						"manos",
+						"bvs",
+						"aogro",
+						"gpas_krsroice_pop",
+						"gpas_krfforest_pop",
+						"gpas_gotabyss_pop",
+						"gpas_krsofury_pop",
+						"gpas_krhiddent_pop",
+						"gpas_krsclouds_pop",
+						"gpas_bwizard_pop",
+						"gpas_scqueen_pop",
+						"gpas_squeen_pop",
+						"gpas_appower_pop",
+						"gpas_aogkasgard_pop",
+						"gpas_aognwot_pop",
+						"gpas_gmacaque_pop",
+                        "gpas_elady_pop"
+					]
+				},
+				{
+					"title": "Casino en Vivo",
+					"display_mode": 0,
+					"games": [
+						"bjl",
+						"rol",
+						"bal",
+						"qrol",
+						"rol_aogroulette",
+						"bfbl",
+						"abjl",
+						"cspl",
+						"dtl",
+						"swl",
+						"aoggosl",
+						"sbdl",
+						"hilo",
+						"huhl",
+						"chel",
+						"brag"
+					]
+				},
+				{
+					"title": "Exclusivos",
+					"display_mode": 0,
+					"games": [
+						"drgch",
+						"epa",
+						"tigc",
+						"gpas_krhiddent_pop",
+						"gpas_sorome_pop",
+						"gpas_appower_pop",
+						"gpas_tstacks_pop",
+						"gpas_sjungle_pop",
+						"gpas_aognwot_pop",
+						"gpas_eemeralds_pop",
+						"gpas_gmacaque_pop",
+						"gpas_elady_pop"
+					]
+				},
+				{
+					"title": "Slots Clásicos",
+					"display_mode": 0,
+					"games": [
+						"zeus",
+						"bfb",
+						"bib",
+						"hlf2",
+						"jbells",
+						"jla",
+						"legwld",
+						"phtd",
+						"whk",
+						"grbjp",
+						"ght",
+						"phot",
+						"ashwdw",
+						"evj",
+						"bbbo",
+						"popc",
+						"ashbmbg",
+						"mcb",
+						"sol",
+						"catqc",
+						"gpas_squeen_pop",
+						"gpas_extrfruits_pop",
+						"gpas_scomic_pop"
+					]
+				}
+			],
+			"slots": [{
+					"title": "Slots Favoritos",
+					"display_mode": 0,
+					"games": [
+						"gpas_bwizard_pop",
+						"aeolus",
+						"bfb",
+						"legwld",
+						"gpas_elady_pop",
+						"whk",
+						"glrj",
+						"aogs",
+						"hlf2",
+						"supman",
+						"ashhof",
+						"wotp"
+					]
+				},
+				{
+					"title": "Slots Nuevos",
+					"display_mode": 0,
+					"games": [
+						"gpas_aogkasgard_pop",
+						"gpas_sstrike_pop",
+						"gpas_tttotems_pop",
+						"gpas_mwilds_pop",
+						"gpas_scomic_pop",
+						"gpas_aognwot_pop",
+						"gpas_eemeralds_pop",
+						"gpas_gmacaque_pop",
+						"gpas_squeen_pop",
+						"gpas_sorome_pop",
+						"gpas_appower_pop",
+						"gpas_tstacks_pop",
+						"gpas_sjungle_pop",
+						"gpas_extrfruits_pop",
+						"gpas_elady_pop",
+						"gpas_krsroice_pop",
+						"gpas_krfforest_pop",
+						"gpas_gotabyss_pop",
+						"gpas_krsofury_pop",
+						"gpas_krhiddent_pop",
+						"gpas_krsclouds_pop"
+					]
+				},
+				{
+					"title": "Jackpots",
+					"display_mode": 0,
+					"games": [
+						"jpgt",
+						"batcat",
+						"evj",
+						"glrj",
+						"aeolus",
+						"aogs",
+						"furf",
+						"zeus",
+						"hrcls",
+						"aogrots",
+						"fdtsl",
+						"fdtjg",
+						"glr2",
+						"jbells",
+						"jla",
+						"grbjp",
+						"phot",
+						"supman",
+						"manos",
+						"bvs",
+						"aogro",
+						"gpas_bwizard_pop",
+						"gpas_scqueen_pop",
+						"gpas_squeen_pop",
+						"gpas_appower_pop",
+						"gpas_aogkasgard_pop",
+						"gpas_gmacaque_pop",
+						"gpas_elady_pop"
+					]
+				},
+				{
+					"title": "Age Of The Gods",
+					"display_mode": 0,
+					"games": [
+						"hrcls",
+						"aogs",
+						"furf",
+						"zeus",
+						"aogrots",
+						"aogmt",
+						"aogmm",
+						"aogroo",
+						"gpas_appower_pop",
+						"gpas_aogkasgard_pop",
+						"gpas_aognwot_pop",
+						"aeolus"
+					]
+				},
+				{
+					"title": "De Película",
+					"display_mode": 0,
+					"games": [
+						"supman",
+						"ashbmbg",
+						"tege",
+						"manos",
+						"bvs",
+						"gpas_scomic_pop",
+						"batcat",
+						"glrj",
+						"jla",
+						"glr2"
+					]
+				},
+				{
+                    "id": "gen-promo2020",
+					"title": "Promociones Exclusivas",
+					"display_mode": 2,
+					"action": {
+						"url_logged_out": "https://www.winner.mx/promociones?hideHeader=1&hideFooter=1",
+						"url_logged_in": "&winnerFix=1&redirectTo=https%3A%2F%2Fwww.winner.mx%2Fpromociones%3FhideHeader%3D1%26hideFooter%3D1"
+					},
+					"assets": {
+						"src": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/banners/promo_banner_winner.jpg"
+					}
+				},
+				{
+					"title": "Fire Blaze Jackpot",
+					"display_mode": 0,
+					"games": [
+						"gpas_squeen_pop",
+						"gpas_gmacaque_pop",
+						"gpas_elady_pop",
+						"gpas_bwizard_pop",
+						"gpas_scqueen_pop"
+					]
+				},
+				{
+					"title": "Fantasía",
+					"display_mode": 0,
+					"games": [
+						"furf",
+						"aogrots",
+						"bfb",
+						"drgch",
+						"epa",
+						"bib",
+						"hlf2",
+						"jpgt",
+						"legwld",
+						"phtd",
+						"whk",
+						"jnglg",
+						"whk2",
+						"anwild",
+						"grbjp",
+						"tigc",
+						"gts50",
+						"ashwdw",
+						"agoeg",
+						"popc",
+						"galst",
+						"mfrt",
+						"ssp",
+						"wotp",
+						"ashhotj",
+						"aogmt",
+						"aogmm",
+						"dvncv",
+						"totl",
+						"samz",
+						"sol",
+						"pisa",
+						"ashfmf",
+						"gpas_gotabyss_pop",
+						"gpas_krsofury_pop",
+						"gpas_squeen_pop",
+						"gpas_tstacks_pop",
+						"gpas_sstrike_pop",
+						"gpas_tttotems_pop"
+					]
+				},
+				{
+					"title": "Ver todos los Slots",
+					"display_mode": 10,
+					"action": {
+						"push_content": "all-slots"
+					}
+				}
+			],
+			"all-slots": {
+				"title": "Todos los Slots",
+				"games": [
+					"ashwdw",
+					"whk2",
+					"whk",
+					"wotp",
+					"totl",
+					"gpas_tttotems_pop",
+					"tigc",
+					"tege",
+					"gpas_scomic_pop",
+					"supman",
+					"sol",
+					"gpas_sstrike_pop",
+					"tonymc",
+					"samz",
+					"ssp",
+					"phot",
+					"gpas_tstacks_pop",
+					"gpas_sorome_pop",
+					"gpas_sjungle_pop",
+					"gpas_mwilds_pop",
+					"gpas_squeen_pop",
+					"gpas_scqueen_pop",
+					"gpas_gmacaque_pop",
+					"gpas_bwizard_pop",
+					"gpas_extrfruits_pop",
+					"gpas_eemeralds_pop",
+					"gpas_appower_pop",
+					"gpas_gotabyss_pop",
+					"gpas_aognwot_pop",
+					"pisa",
+					"phtd",
+					"mcb",
+					"mfrt",
+					"lm",
+					"legwld",
+					"gpas_krsclouds_pop",
+					"gpas_krhiddent_pop",
+					"gpas_krsofury_pop",
+					"gpas_krsroice_pop",
+					"gpas_gotabyss_pop",
+					"gpas_krfforest_pop",
+					"jla",
+					"jnglg",
+					"jb_mh",
+					"jpgt",
+					"jbells",
+					"gts50",
+					"ashhotj",
+					"ashhof",
+					"hlf2",
+					"hlf",
+					"grbjp",
+					"bib",
+					"glr2",
+					"glrj",
+					"ght",
+					"galst",
+					"popc",
+					"ashfmf",
+					"fdtjg",
+					"fdt",
+					"fdtsl",
+					"gpas_elady_pop",
+					"evj",
+					"epa",
+					"drgch",
+					"mobdt",
+					"manos",
+					"bvs",
+					"ashbmbg",
+					"dvncv",
+					"catqc",
+					"ct",
+					"bfb",
+					"bob",
+					"bbbo",
+					"batcat",
+					"anwild",
+					"aogrots",
+					"hrcls",
+					"zeus",
+					"furf",
+					"aogs",
+					"aogroo",
+					"aogmt",
+					"aogmm",
+					"aeolus",
+					"agoeg"
+				]
+			},
+			"live-casino": {
+				"title": "Casino en Vivo",
+				"games": [
+					"bjl",
+					"rol",
+					"bal",
+					"qrol",
+					"rol_aogroulette",
+					"bfbl",
+					"abjl",
+					"cspl",
+					"dtl",
+					"swl",
+					"aoggosl",
+					"sbdl",
+					"hilo",
+					"huhl",
+					"chel",
+					"brag"
+				]
+			}
+		}
+	},
+	"games": [{
+			"id": "bjl",
+			"table_alias": "bjl",
+			"title": "Live Blackjack",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/poster-small/bjl_gen.jpg",
+				"bullet_small": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/bullet-small/bjl_gen.png"
+			}
+		},
+		{
+			"id": "rol",
+			"table_alias": "rol",
+			"title": "Live Roulette",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/poster-small/rol_gen.jpg",
+				"bullet_small": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/bullet-small/rol_gen.png"
+			}
+		},
+		{
+			"id": "bal",
+			"table_alias": "bal_minibaccarat",
+			"title": "Live Baccarat",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/poster-small/bal_gen.jpg"
+			}
+		},
+		{
+			"id": "qrol",
+			"table_alias": "rol_quantumroulette",
+			"title": "Quantum Roulette",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/qrol_quantumrol.jpg"
+			}
+		},
+		{
+			"id": "rol_aogroulette",
+			"table_alias": "rol_aogroulette",
+			"title": "Age of the Gods Roulette",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aog_roulette.jpg"
+			}
+		},
+		{
+			"id": "bfbl",
+			"table_alias": "bfbl_liveslots",
+			"title": "Buffalo Blitz Live",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bfb_live.jpg"
+			}
+		},
+		{
+			"id": "abjl",
+			"table_alias": "abjl_allbetsblackjack",
+			"title": "All Bets Blackjack Live",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/allbets_bj_live.jpg"
+			}
+		},
+		{
+			"id": "cspl",
+			"table_alias": "cspl_casinostudpoker",
+			"title": "Casino Stud Poker",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/cstud_poker.jpg"
+			}
+		},
+		{
+			"id": "dtl",
+			"table_alias": "dtl_dragontiger",
+			"title": "Dragon Tiger",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/dgtg_live.jpg"
+			}
+		},
+		{
+			"id": "swl",
+			"table_alias": "swl_spinawin",
+			"title": "Spin A Win",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/spinawin.jpg"
+			}
+		},
+		{
+			"id": "aoggosl",
+			"table_alias": "aoggosl_godofstorm",
+			"title": "God of Storms Live",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aeolus_live.jpg"
+			}
+		},
+		{
+			"id": "sbdl",
+			"table_alias": "sbdl_deluxesicbo",
+			"title": "Sic Bo Deluxe",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/sicbo_live.jpg"
+			}
+		},
+		{
+			"id": "hilo",
+			"table_alias": "hilo_hilo",
+			"title": "Hi-Lo",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/winnermx/native/casino/app/assets/poster-small/hilol_gen.jpg"
+			}
+		},
+		{
+			"id": "huhl",
+			"table_alias": "huhl_headsupholdem",
+			"title": "Heads Up Holdem",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/headsup_live.jpg"
+			}
+		},
+		{
+			"id": "chel",
+			"table_alias": "chel_casinoholdem",
+			"title": "Casino Holdem",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/holdem_pk_live.jpg"
+			}
+		},
+		{
+			"id": "brag",
+			"table_alias": "brag_3cardbrag",
+			"title": "3 Card Brag",
+			"game_type": "live_casino",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/3cb_live.jpg"
+			}
+		},
+		{
+			"id": "aeolus",
+			"title": "Age of the Gods: God of Storms",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aeolus.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/aeolus.png"
+			}
+		},
+		{
+			"id": "aogs",
+			"title": "Age of the Gods™",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aogs.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/aogs.png"
+			}
+		},
+		{
+			"id": "furf",
+			"title": "Age Of The Gods™: Furious 4",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/furf.jpg"
+			}
+		},
+		{
+			"id": "zeus",
+			"title": "Age Of The Gods™: King of Olympus",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/zeus.jpg"
+			}
+		},
+		{
+			"id": "hrcls",
+			"title": "Age Of The Gods™: Prince of Olympus",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/hrcls.jpg"
+			}
+		},
+		{
+			"id": "aogrots",
+			"title": "Age Of The Gods™: Ruler of the Sky",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aogrots.jpg"
+			}
+		},
+		{
+			"id": "batcat",
+			"title": "Batman™ & Catwoman™ Cash",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/batcat.jpg"
+			}
+		},
+		{
+			"id": "bfb",
+			"title": "Buffalo Blitz",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bfb.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/bfb.png"
+			}
+		},
+		{
+			"id": "drgch",
+			"title": "Dragon Champions™",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/drgch.jpg"
+			}
+		},
+		{
+			"id": "epa",
+			"title": "Epic Ape™",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/epa.jpg"
+			}
+		},
+		{
+			"id": "fdtsl",
+			"title": "Frankie Dettori Sporting Legend™",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/fdtsl.jpg"
+			}
+		},
+		{
+			"id": "fdtjg",
+			"title": "Frankie Dettori's™ Magic Seven Jackpot",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/fdtjg.jpg"
+			}
+		},
+		{
+			"id": "glrj",
+			"title": "Gladiator Jackpot",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/glrj.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/glrj.png"
+			}
+		},
+		{
+			"id": "glr2",
+			"title": "Gladiator™ Road to Rome",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/glr2.jpg"
+			}
+		},
+		{
+			"id": "bib",
+			"title": "Great Blue",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bib.jpg"
+			}
+		},
+		{
+			"id": "hlf",
+			"title": "Halloween Fortune",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/hf.jpg"
+			}
+		},
+		{
+			"id": "hlf2",
+			"title": "Halloween Fortune II",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/hlf2.jpg"
+			}
+		},
+		{
+			"id": "jbells",
+			"title": "Jackpot Bells™",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/jbells.jpg"
+			}
+		},
+		{
+			"id": "jpgt",
+			"title": "Jackpot Giant",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/jpgt.jpg"
+			}
+		},
+		{
+			"id": "jla",
+			"title": "Justice League™",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/jla.jpg"
+			}
+		},
+		{
+			"id": "legwld",
+			"title": "Legacy Of The Wilds",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/legwld.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/legwld.png"
+			}
+		},
+		{
+			"id": "phtd",
+			"title": "Pharaoh's Treasure Deluxe",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/phtd.jpg"
+			}
+		},
+		{
+			"id": "bjto",
+			"title": "Premium Blackjack",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bjto.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/bjto.png"
+			}
+		},
+		{
+			"id": "ro_g",
+			"title": "Premium European Roulette",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ro_g.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/ro_g.png"
+			}
+		},
+		{
+			"id": "whk",
+			"title": "White King",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/whk.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/whk.png"
+			}
+		},
+		{
+			"id": "jnglg",
+			"title": "Jungle Giants",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/jnglg.jpg"
+			}
+		},
+		{
+			"id": "whk2",
+			"title": "White King II",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/whk2.jpg"
+			}
+		},
+		{
+			"id": "anwild",
+			"title": "Anaconda Wild",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/anwild.jpg"
+			}
+		},
+		{
+			"id": "grbjp",
+			"title": "Great Blue Jackpot",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/grbjp.jpg"
+			}
+		},
+		{
+			"id": "ght",
+			"title": "Gem Heat",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ght.jpg"
+			}
+		},
+		{
+			"id": "bjcb",
+			"title": "Blackjack Cashback",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bjcb.jpg"
+			}
+		},
+		{
+			"id": "tigc",
+			"title": "Tiger Claw",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/tigc.jpg"
+			}
+		},
+		{
+			"id": "lm",
+			"title": "Lotto Madness",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/lm.jpg"
+			}
+		},
+		{
+			"id": "phot",
+			"title": "Purple Hot",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/phot.jpg"
+			}
+		},
+		{
+			"id": "supman",
+			"title": "Superman",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/supman.jpg"
+			}
+		},
+		{
+			"id": "gts50",
+			"title": "Hot Gems",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gts50.jpg"
+			}
+		},
+		{
+			"id": "abbj",
+			"title": "All Bets Blackjack",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/abbj.jpg"
+			}
+		},
+		{
+			"id": "jb_mh",
+			"title": "Jacks or Better Multi-Hand",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/jb_mh.jpg"
+			}
+		},
+		{
+			"id": "ashwdw",
+			"title": "Wild Wishes",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ashwdw.jpg"
+			}
+		},
+		{
+			"id": "evj",
+			"title": "Everybody's Jackpot",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/evj.jpg"
+			}
+		},
+		{
+			"id": "ro101",
+			"title": "101 Roulette",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ro101.jpg"
+			}
+		},
+		{
+			"id": "agoeg",
+			"title": "Age of Egypt",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/agoeg.jpg"
+			}
+		},
+		{
+			"id": "bbbo",
+			"title": "Berry Berry Bonanza™",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bbbo.jpg"
+			}
+		},
+		{
+			"id": "bjs",
+			"title": "Blackjack Switch",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bjs.jpg"
+			}
+		},
+		{
+			"id": "mobdt",
+			"title": "Desert Treasure",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/mobdt.jpg"
+			}
+		},
+		{
+			"id": "fdt",
+			"title": "Frankie Dettori’s™ Magic Seven",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/fdt.jpg"
+			}
+		},
+		{
+			"id": "popc",
+			"title": "Gaelic Luck",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/popc.jpg"
+			}
+		},
+		{
+			"id": "galst",
+			"title": "Galactic Streak",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/galst.jpg"
+			}
+		},
+		{
+			"id": "mfrt",
+			"title": "Miss Fortune",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/mfrt.jpg"
+			}
+		},
+		{
+			"id": "bjto_sh",
+			"title": "Premium Blackjack Single Hand",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bjto_sh.jpg"
+			}
+		},
+		{
+			"id": "ssp",
+			"title": "Santa Surprise",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ssp.jpg"
+			}
+		},
+		{
+			"id": "wotp",
+			"title": "Ways Of The Phoenix",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/wotp.jpg"
+			}
+		},
+		{
+			"id": "ashhof",
+			"title": "Heart of the Frontier",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ashhof.jpg"
+			}
+		},
+		{
+			"id": "ashhotj",
+			"title": "Heart of The Jungle",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ashhotj.jpg"
+			}
+		},
+		{
+			"id": "aogmt",
+			"title": "Age of the Gods: Mighty Midas",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aogmt.jpg"
+			}
+		},
+		{
+			"id": "aogmm",
+			"title": "Age of the Gods: Medusa & Monsters",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aogmm.jpg"
+			}
+		},
+		{
+			"id": "aogroo",
+			"title": "Age of the Gods: Rulers Of Olympus",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aogroo.jpg"
+			}
+		},
+		{
+			"id": "ashbmbg",
+			"title": "DC: Batman & The Batgirl Bonanza",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ashbmbg.jpg"
+			}
+		},
+		{
+			"id": "dvncv",
+			"title": "Da Vinci's Vault",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/dvncv.jpg"
+			}
+		},
+		{
+			"id": "ct",
+			"title": "Captains Treasure",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ct.jpg"
+			}
+		},
+		{
+			"id": "tonymc",
+			"title": "Sporting Legends: AP McCoy",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/tonymc.jpg"
+			}
+		},
+		{
+			"id": "tege",
+			"title": "Terminator Genesis",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/tege.jpg"
+			}
+		},
+		{
+			"id": "manos",
+			"title": "DC: Superman-Man of Steel",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/manos.jpg"
+			}
+		},
+		{
+			"id": "bvs",
+			"title": "DC: Batman v Superman - Dawn of Justice",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bvs.jpg"
+			}
+		},
+		{
+			"id": "totl",
+			"title": "Treasures of the Lamps",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/totl.jpg"
+			}
+		},
+		{
+			"id": "samz",
+			"title": "Secrets of the Amazon",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/samz.jpg"
+			}
+		},
+		{
+			"id": "mcb",
+			"title": "Mr. Cashback",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/mcb.jpg"
+			}
+		},
+		{
+			"id": "sol",
+			"title": "Streak of Luck",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/sol.jpg"
+			}
+		},
+		{
+			"id": "pisa",
+			"title": "Pixel Samurai",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/pisa.jpg"
+			}
+		},
+		{
+			"id": "ashfmf",
+			"title": "Full Moon Fortunes",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/ashfmf.jpg"
+			}
+		},
+		{
+			"id": "bob",
+			"title": "Bonus Bears",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/bob.jpg"
+			}
+		},
+		{
+			"id": "catqc",
+			"title": "Cat Queen",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/catcq.jpg"
+			}
+		},
+		{
+			"id": "aogro",
+			"title": "Age Of The Gods: Jackpot Roulette",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/aogro.jpg"
+			}
+		},
+		{
+			"id": "huh",
+			"title": "Heads Up Holdem",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/huh.jpg"
+			}
+		},
+		{
+			"id": "dbro",
+			"title": "Diamond Bet Roulette",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/dbro.jpg"
+			}
+		},
+		{
+			"id": "fcbj",
+			"title": "Free Chip Blackjack",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/fcbj.jpg"
+			}
+		},
+		{
+			"id": "fdtro",
+			"title": "Frankie Dettori Roulette",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/fdtro.jpg"
+			}
+		},
+		{
+			"id": "gpas_krsroice_pop",
+			"title": "Kingdoms Rise: Reign of Ice",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_krsroice_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_krfforest_pop",
+			"title": "Kingdoms Rise: Forbidden Forest",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_krfforest_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_gotabyss_pop",
+			"title": "Kingdoms Rise: Guardians of the Abyss",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_gotabyss_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_krsofury_pop",
+			"title": "Kingdoms Rise: Sands of Fury",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_krsofury_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_krhiddent_pop",
+			"title": "Kingdoms Rise: Captain's Treasure",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_krhiddent_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_krsclouds_pop",
+			"title": "Kingdoms Rise: Scorching Clouds",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_krsclouds_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_bwizard_pop",
+			"title": "POP Fire Blaze: Blue Wizzard",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_bwizard_pop.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/gpas_bwizard_pop.png"
+			}
+		},
+		{
+			"id": "gpas_scqueen_pop",
+			"title": "POP Fire Blaze: Pharaoh's Daughter",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_scqueen_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_squeen_pop",
+			"title": "POP Fire Blaze: Sky Queen",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_squeen_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_sorome_pop",
+			"title": "POP Shields of Rome",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_sorome_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_appower_pop",
+			"title": "POP Age of the Gods: Apollo Power",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_appower_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_tstacks_pop",
+			"title": "POP Tiger Stacks",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_tstacks_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_sjungle_pop",
+			"title": "POP Savage Jungle",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_sjungle_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_extrfruits_pop",
+			"title": "POP Extreme Fruits Ultimate",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_extrfruits_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_aogkasgard_pop",
+			"title": "POP Age of the Gods Norse: King of Asgard",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_aogkasgard_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_sstrike_pop",
+			"title": "Stallion Strike",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_sstrike_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_tttotems_pop",
+			"title": "Tip Top Totems™ POP",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_tttotems_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_mwilds_pop",
+			"title": "POP Midnight Wild",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_mwilds_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_scomic_pop",
+			"title": "Superman Comic POP",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_scomic_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_aognwot_pop",
+			"title": "POP Age of the Gods Norse: Ways of Thunder",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_aognwot_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_eemeralds_pop",
+			"title": "POP Egyptian Emeralds",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_eemeralds_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_gmacaque_pop",
+			"title": "POP Fire Blaze: Golden Macaque",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_gmacaque_pop.jpg"
+			}
+		},
+		{
+			"id": "gpas_elady_pop",
+			"title": "Fire Blaze: Eternal Lady",
+			"assets": {
+				"poster_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/poster-small/gpas_elady_pop.jpg",
+				"bullet_small": "https://static.winner.mx/apps/shared/native/casino/app/assets/bullet-small/gpas_elady_pop.png"
+			}
+		}
+	],
+	"categories": [{
+			"id": "new",
+			"name": "Nuevos"
+		},
+		{
+			"id": "slots",
+			"name": "Slots"
+		},
+		{
+			"id": "tables",
+			"name": "Mesas"
+		},
+		{
+			"id": "cards",
+			"name": "Cartas"
+		}
+	]
+}
